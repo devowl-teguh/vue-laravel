@@ -1,13 +1,15 @@
 <?php
 
 namespace App;
-
+// use Laravel\Scout\Searchable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
     use Notifiable;
+    // use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -26,4 +28,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $table = 'users';
 }

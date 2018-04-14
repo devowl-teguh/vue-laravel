@@ -5,8 +5,9 @@ import VueRouter from 'vue-router';
 // import RegisterFirebase from '../components/auth/Register.vue';
 // import Home from '../components/Home.vue';
 import FirebaseComponent from '../components/firebase/Firebase.vue';
-import UserComponent from '../components/firebase/User.vue';
+// import UserComponent from '../components/firebase/User.vue';
 import ExampleComponent from '../components/ExampleComponent.vue';
+import UserComponent from '../components/user/User.vue';
 import store from '../store';
 
 
