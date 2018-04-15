@@ -5,9 +5,10 @@ import VueRouter from 'vue-router';
 // import RegisterFirebase from '../components/auth/Register.vue';
 // import Home from '../components/Home.vue';
 import FirebaseComponent from '../components/firebase/Firebase.vue';
-// import UserComponent from '../components/firebase/User.vue';
+import HomeComponent from '../components/HomeComponent.vue';
 import ExampleComponent from '../components/ExampleComponent.vue';
 import UserComponent from '../components/user/User.vue';
+import EmailComponent from '../components/email/Email.vue';
 import store from '../store';
 
 
@@ -16,9 +17,9 @@ Vue.use(VueRouter);
 const router =  new VueRouter({
   mode: 'history',
   routes:[
-    { path: '/', component: ExampleComponent, name:'ExampleComponent'},
-    { path: '/firebase', component: FirebaseComponent, name:'FirebaseComponent'},
-    { path: '/user', component: UserComponent, name:'user'}
+    { path: '/', component: FirebaseComponent, name:'FirebaseComponent'},
+    { path: '/user', component: UserComponent, name:'user'},
+    { path: '/email', component: EmailComponent, name:'email'}
   ]
 })
 

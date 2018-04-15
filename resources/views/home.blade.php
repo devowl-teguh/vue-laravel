@@ -4,6 +4,7 @@
 
 @section('content')
 <!-- As a heading -->
+<nav-component></nav-component>
 <div class="container">
   <div class="row">
       <router-view></router-view>

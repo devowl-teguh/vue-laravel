@@ -25,6 +25,7 @@ Vue.use(VueRouter);
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('formaddbooks-component', require('./components/firebase/FirebaseFormAddBooks.vue'));
 Vue.component('formlistbooks-component', require('./components/firebase/FirebaseListBooks.vue'));
+Vue.component('nav-component', require('./components/NavComponent.vue'));
 const User = {
   template: '<div>User</div>'
 }

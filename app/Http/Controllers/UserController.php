@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Mail\serviceMail;
 use App\User;
-use Hash;
+use Hash, Mail;
 
 class UserController extends Controller
 {
@@ -50,5 +51,11 @@ class UserController extends Controller
 
     public function deleteUser(){
 
+    }
+
+    public function sendMail(){
+          Mail::to('teguhh.pratama@gmail.com')->send(new serviceMail());
+          return response()->json('Success send email',200);
+      
     }
 }

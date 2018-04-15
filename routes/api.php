@@ -21,3 +21,5 @@ Route::get('user', 'UserController@index');
 Route::post('user', 'UserController@store');
 Route::put('user/{id}', 'UserController@updateUser');
 Route::delete('user/{id}', 'UserController@deleteUser');
+
+Route::get('send-mail', 'UserController@sendMail');
