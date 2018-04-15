@@ -13,7 +13,8 @@ import store from './store';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VueFire from 'vuefire';
-
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
 Vue.use(VueFire);
 Vue.use(VueRouter);
 /**
@@ -26,6 +27,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('formaddbooks-component', require('./components/firebase/FirebaseFormAddBooks.vue'));
 Vue.component('formlistbooks-component', require('./components/firebase/FirebaseListBooks.vue'));
 Vue.component('nav-component', require('./components/NavComponent.vue'));
+Vue.component('table-results', require('./components/user/TableResultAlgolia.vue'));
+Vue.component('algolia-component', require('./components/user/UserSearchAlgolia.vue'));
 const User = {
   template: '<div>User</div>'
 }

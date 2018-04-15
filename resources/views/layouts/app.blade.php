@@ -9,8 +9,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
         <!-- css -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
         <!-- <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/medium-editor.min.css')}}" rel="stylesheet" type="text/css"> -->

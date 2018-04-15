@@ -8,6 +8,7 @@ import FirebaseComponent from '../components/firebase/Firebase.vue';
 import HomeComponent from '../components/HomeComponent.vue';
 import ExampleComponent from '../components/ExampleComponent.vue';
 import UserComponent from '../components/user/User.vue';
+import UserSearchComponent from '../components/user/UserSearchAlgolia.vue';
 import EmailComponent from '../components/email/Email.vue';
 import store from '../store';
 
@@ -19,6 +20,7 @@ const router =  new VueRouter({
   routes:[
     { path: '/', component: FirebaseComponent, name:'FirebaseComponent'},
     { path: '/user', component: UserComponent, name:'user'},
+    { path: '/search', component: UserSearchComponent, name:'userSearch'},
     { path: '/email', component: EmailComponent, name:'email'}
   ]
 })

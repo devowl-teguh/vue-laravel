@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-// use Laravel\Scout\Searchable;
+use Laravel\Scout\Searchable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use Notifiable;
-    // use Searchable;
+    use Searchable;
 
     /**
      * The attributes that are mass assignable.

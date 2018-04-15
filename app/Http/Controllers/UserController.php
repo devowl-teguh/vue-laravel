@@ -49,13 +49,18 @@ class UserController extends Controller
       return response()->json(['message'=>'User not found'], 404);
     }
 
-    public function deleteUser(){
-
+    public function deleteUser($id){
+      $user = User::find($id);
+      if($user){
+        $user->delete();
+        return response()->json($user, 200);
+      }
+      return response()->json(['message'=>'User not found'], 404);
     }
 
     public function sendMail(){
           Mail::to('teguhh.pratama@gmail.com')->send(new serviceMail());
           return response()->json('Success send email',200);
-      
+
     }
 }

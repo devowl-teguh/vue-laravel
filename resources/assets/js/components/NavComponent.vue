@@ -9,7 +9,7 @@
           <router-link class="nav-link active" to="/user">User</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link active" to="/email">Email</router-link>
+          <router-link class="nav-link active" to="/search">Search</router-link>
         </li>
       </ul>
     </div>

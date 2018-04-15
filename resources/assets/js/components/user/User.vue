@@ -1,5 +1,8 @@
+
+
 <template>
   <div class="container">
+    <algolia-component></algolia-component>
     <div class="row justify-content-center">
       <div class="col-6 form-user-list">
         <form method="post" action="/user"  @submit="checkForm">
@@ -22,7 +25,10 @@
             <label>Password</label>
             <input type="password" v-model="password" class="form-control" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" :disabled="disabled == 1? true:false">
+            Submit
+          </button>
+          <i class="fa fa-spinner" v-show="spin"></i>
         </form>
       </div>
     </div>
@@ -39,7 +45,7 @@
            <tr v-for="user in users">
              <td>{{user.name}}</td>
              <td>{{user.email}}</td>
-             <td></td>
+             <td><a href="#" v-on:click="userDelete(user)" ><i class="fa fa-trash"></i></a></td>
            </tr>
          </tbody>
         </table>
@@ -61,7 +67,9 @@ export default{
       email:'',
       name:'',
       password:'',
-      users:[]
+      users:[],
+      disabled: 0,
+      spin: 0
     }
   },
   methods:{
@@ -72,9 +80,11 @@ export default{
       if(!this.name) this.errors.push("Name required.");
       if(!this.password) this.errors.push("Password required.");
       if(!this.errors.length){
+        this.disabled = 1;
+        this.spin = 1;
         this.$http.post('/api/user',
         {name: this.name, email: this.email, password: this.password}).then(response => {
-
+          this.disabled = 0;this.spin = 0;
           // get body data
           this.fetchData();
           console.log(response.body);
@@ -92,6 +102,18 @@ export default{
       }, response => {
         console.log(response);
         // error callback
+      });
+    },
+    userDelete(user){
+      console.log(user);
+      let userid = user.id;
+      this.$http.delete('/api/user/'+userid,{})
+      .then(response => {
+        this.users = response.body;
+        this.fetchData();
+        console.log(response.body);
+      }, response => {
+        console.log(response);
       });
     }
   }
