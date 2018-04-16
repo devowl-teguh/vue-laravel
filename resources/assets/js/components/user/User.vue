@@ -2,7 +2,13 @@
 
 <template>
   <div class="container">
+
+
     <algolia-component></algolia-component>
+    <div class="row justify-content-center">
+      <button class="btn btn-primary btn-lg" v-on:click="pushEmail" :disabled="disabled == 1? true:false">Push Email</button>
+      <i class="fa fa-spinner" v-show="spin"></i>
+    </div>
     <div class="row justify-content-center">
       <div class="col-6 form-user-list">
         <form method="post" action="/user"  @submit="checkForm">
@@ -114,6 +120,19 @@ export default{
         console.log(response.body);
       }, response => {
         console.log(response);
+      });
+    },
+    pushEmail(){
+      this.disabled = 1;
+      this.spin = 1;
+      this.$http.get('/api/send-mail',{})
+      .then(response => {
+        this.disabled = 0;
+        this.spin = 0;
+        alert(response.body);
+      }, response => {
+        console.log(response);
+        // error callback
       });
     }
   }
